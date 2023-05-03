@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    
+<div class="container">
+  <form action="analyze/" method="post">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="text">Enter your text</label>
+      <textarea class="form-control" id="input_text" name="input_text" rowa="3"></textarea>
+    </div>
+      
+    <div class="custom-control custom-switch">
+        <input type="checkbox" class="custom-control-input" name="make_capitlize" id="make_capitalize">
+        <label for="make_capitalize" class="custom-control-label">Make Capitalize</label>
+      </div>
+
+
+        <div class="custom-control custom-switch">
+          <input type="checkbox" class="custom-control-input" name="word_count" id="word_count">
+          <label for="word_count" class="custom-control-label">Word Count</label>
+        </div>
+
+        <div class="custom-control custom-switch">
+            <input type="checkbox" class="custom-control-input" name="remove_function" id="remove_function">
+            <label for="remove_function" class="custom-control-label">Remove Punctuation</label>
+        </div>
+
+        <div class="custom-control custom-switch">
+              <input type="checkbox" class="custom-control-input" name="remove_whitespace" id="remove_whitespace">
+              <label for="remove_whitespace" class="custom-control-label">Remove Whitespace</label>
+        </div>
+
+        <div class="custom-control custom-switch">
+              <input type="checkbox" class="custom-control-input" name="remove_new_line" id="remove_new_line">
+              <label for="remove_new_line" class="custom-control-label">Remove New Line</label>
+        </div>
+        <button type="submit" class="btn btn-primary mt-2">submit Data</button>
+  </form>
+</div>
+
+{% endblock  %}
